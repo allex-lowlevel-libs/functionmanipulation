@@ -4,6 +4,10 @@ function dummyFunc() {}
 
 function createFunctionManipulation(inherit) {
   function functionCopy(func){
+    //TODO integrate with checks
+    if ('function' !== typeof func){
+      throw new Error('First parameter \'func\' is not a function');
+    }
     var f = function(){
       func.apply(this,arguments);
     };
