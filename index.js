@@ -5,7 +5,7 @@ function dummyFunc() {}
 function createFunctionManipulation(inherit) {
   function functionCopy(func){
     //TODO integrate with checks
-    var f;
+    var f,i;
     if ('function' !== typeof func){
       throw new Error('First parameter \'func\' is not a function');
     }
@@ -14,7 +14,7 @@ function createFunctionManipulation(inherit) {
     };
     //f.name = func.name;
     f.displayName = func.displayName;
-    for(var i in func){
+    for(i in func){
       f[i] = func[i];
     }
     inherit(f,func);
